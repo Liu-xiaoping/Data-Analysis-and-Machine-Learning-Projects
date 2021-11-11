@@ -1,1 +1,1 @@
-This is my Machine Learning and Data Analysis project. I used python language.
+This is my Machine Learning and Data Analysis project for internship.

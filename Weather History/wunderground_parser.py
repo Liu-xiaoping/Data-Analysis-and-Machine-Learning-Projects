@@ -4,16 +4,11 @@ from urllib.request import urlopen
 
 
 def parse_station(station):
-    '''
-    This function parses the web pages downloaded from wunderground.com
-    into a flat CSV file for the station you provide it.
-p
-    Make sure to run the wunderground scraper first so you have the web
-    pages downloaded.
-    '''
+    
 
-    # Scrape between July 1, 2014 and July 1, 2015
-    # You can change the dates here if you prefer to parse a different range
+    # Scrape between July 1, 2014 and July 1, 2015.
+    
+
     current_date = datetime(year=2014, month=7, day=1)
     end_date = datetime(year=2015, month=7, day=1)
 
@@ -100,17 +95,10 @@ p
                     current_date += timedelta(days=1)
                     
                 except:
-                    # If the web page is formatted improperly, signal that the page may need
-                    # to be downloaded again.
+                    
                     try_again = True
 
-            # If the web page needs to be downloaded again, re-download it from
-            # wunderground.com
-
-            # If the parser gets stuck on a certain date, you may need to investigate
-            # the page to find out what is going on. Sometimes data is missing, in
-            # which case the parser will get stuck. You can manually put in the data
-            # yourself in that case, or just tell the parser to skip this day.
+            
             if try_again:
                 print('Error with date {}'.format(current_date))
 

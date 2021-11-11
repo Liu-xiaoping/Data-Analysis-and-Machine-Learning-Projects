@@ -2,16 +2,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 from datetime import datetime
 
-'''
-This is an example to generate the Philadelphia, PA weather chart.
-
-If you want to make the chart for another city, you will have to modify
-this code slightly to read that city's data in, change the title, and
-likely change the y-axis of the chart to fit your city's temperature range.
-
-I also use a custom matplotlib style as the basis for these charts, which you
-can find here: https://gist.githubusercontent.com/rhiever/d0a7332fe0beebfdc3d5/raw/223d70799b48131d5ce2723cd5784f39d7a3a653/tableau10.mplstyle
-'''
 
 weather_data = pd.read_csv('KPHL.csv', parse_dates=['date'])
 print(weather_data.describe())
@@ -27,7 +17,7 @@ with plt.style.context('https://gist.githubusercontent.com/rhiever/d0a7332fe0bee
         plt.title(column)
         plt.savefig('{}.png'.format(column))
 
-    # Make sure we're only plotting temperatures for July 2014 - June 2015
+    
     weather_data_subset = weather_data[weather_data['date'] >= datetime(year=2014, month=7, day=1)]
     weather_data_subset = weather_data_subset[weather_data_subset['date'] < datetime(year=2015, month=7, day=1)].copy()
     weather_data_subset['day_order'] = range(len(weather_data_subset))

@@ -6,21 +6,14 @@ import os
 
 
 def scrape_station(station):
-    '''
-    This function scrapes the weather data web pages from wunderground.com
-    for the station you provide it.
-
-    You can look up your city's weather station by performing a search for
-    it on wunderground.com then clicking on the "History" section.
-    The 4-letter name of the station will appear on that page.
-    '''
+    
 
     # Scrape between July 1, 2014 and July 1, 2015
-    # You can change the dates here if you prefer to scrape a different range
+    
     current_date = datetime(year=2014, month=7, day=1)
     end_date = datetime(year=2015, month=7, day=1)
 
-    # Make sure a directory exists for the station web pages
+    
     os.mkdir(station)
 
     # Use .format(station, YYYY, M, D)
